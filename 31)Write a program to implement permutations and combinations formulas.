@@ -1,0 +1,28 @@
+import math
+
+def factorial(n):
+    """Returns the factorial of n."""
+    return math.factorial(n)
+
+def permutations(n, r):
+    """Calculates the number of permutations (nPr)."""
+    return factorial(n) // factorial(n - r)
+
+def combinations(n, r):
+    """Calculates the number of combinations (nCr)."""
+    return factorial(n) // (factorial(r) * factorial(n - r))
+
+def main():
+    print("Permutations and Combinations Calculator")
+    n = int(input("Enter the value of n: "))
+    r = int(input("Enter the value of r: "))
+    
+    if n < 0 or r < 0 or n < r:
+        print("Invalid input! n and r must be non-negative integers and n >= r.")
+        return
+    
+    print(f"Permutations P({n}, {r}) = {permutations(n, r)}")
+    print(f"Combinations C({n}, {r}) = {combinations(n, r)}")
+
+if __name__ == "__main__":
+    main()
